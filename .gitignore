@@ -3,7 +3,5 @@ target/
 *.jar
 .idea/
 *.iml
-screenshots/
-reports/
 test-data/cookies.json
 config.properties
