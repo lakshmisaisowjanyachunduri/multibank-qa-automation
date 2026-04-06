@@ -17,11 +17,15 @@ public class DriverManager {
 
     public static void initDriver(String browser) {
         WebDriver webDriver;
+        boolean isCI = System.getenv("CI") != null;
 
         switch (browser.toLowerCase()) {
             case "firefox":
                 WebDriverManager.firefoxdriver().setup();
                 FirefoxOptions firefoxOptions = new FirefoxOptions();
+                if (isCI) {
+                    firefoxOptions.addArguments("--headless");
+                }
                 firefoxOptions.addArguments("--start-maximized");
                 webDriver = new FirefoxDriver(firefoxOptions);
                 break;
@@ -30,6 +34,13 @@ public class DriverManager {
             default:
                 WebDriverManager.chromedriver().setup();
                 ChromeOptions chromeOptions = new ChromeOptions();
+                if (isCI) {
+                    chromeOptions.addArguments("--headless=new");
+                    chromeOptions.addArguments("--no-sandbox");
+                    chromeOptions.addArguments("--disable-dev-shm-usage");
+                    chromeOptions.addArguments("--disable-gpu");
+                    chromeOptions.addArguments("--window-size=1920,1080");
+                }
                 chromeOptions.addArguments("--start-maximized");
                 chromeOptions.addArguments("--disable-notifications");
                 chromeOptions.addArguments("--disable-popup-blocking");
