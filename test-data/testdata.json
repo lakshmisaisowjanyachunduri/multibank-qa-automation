@@ -1,0 +1,40 @@
+{
+  "loginPage": {
+    "title": "Sign In | Secure Login | mb.io",
+    "expectedElements": [
+      "Email address",
+      "Password",
+      "Log In",
+      "Forgot Password?",
+      "Sign up"
+    ]
+  },
+  "navigation": {
+    "expectedMenuItems": [
+      "Home",
+      "Explore",
+      "Trade",
+      "Wallet"
+    ]
+  },
+  "trading": {
+    "expectedCategories": [
+      "Watchlist",
+      "Hot",
+      "Gainers",
+      "Losers"
+    ]
+  },
+  "appLinks": {
+    "appStore": "apps.apple.com",
+    "googlePlay": "play.google.com"
+  },
+  "whyMultibank": {
+    "expectedComponents": [
+      "Why MultiBank",
+      "Regulation",
+      "Awards",
+      "Security"
+    ]
+  }
+}
